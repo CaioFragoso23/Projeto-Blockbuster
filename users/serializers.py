@@ -18,3 +18,4 @@ class UserSerializer(serializers.Serializer):
             return User.objects.create_superuser(**validated_data, is_superuser=True)
         else:
             return User.objects.create_user(**validated_data, is_superuser=False)
+        
