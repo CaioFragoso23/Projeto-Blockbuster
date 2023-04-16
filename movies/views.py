@@ -20,7 +20,7 @@ class MovieView(APIView):
         serializer = MovieSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         self.check_object_permissions(request, serializer.validated_data)
-        serializer.save(user=request.user, added_by=request.user.email)
+        serializer.save(user=request.user)
         serializer.is_valid(raise_exception=True)
         return Response(serializer.data, status.HTTP_201_CREATED)
     
