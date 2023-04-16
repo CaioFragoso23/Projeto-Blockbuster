@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import RatingChoices
-from .models import Movie
+from .models import Movie, MovieOrder
 from users.serializers import UserSerializer
 class MovieSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
@@ -19,4 +19,7 @@ class MovieOrderSerializer(serializers.Serializer):
     price = serializers.DecimalField(max_digits=8, decimal_places=2)
     buyed_by = serializers.CharField(read_only=True, source="user.email")
     buyed_at = serializers.DateTimeField(read_only=True)
+
+    def create(self, validated_data):
+        return MovieOrder.objects.create(**validated_data)
 
