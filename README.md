@@ -1,4 +1,28 @@
-# M5 - Kenzie Buster
+<h1 style="text-align:center"> Projeto BlockBuster </h1> 
+
+> Esse projeto foi feito como uma API com o intuito de gestão de vendas de filmes (como um Blockbuster). Portanto ele consegue:
+* Criar usuário
+* Buscar filmes
+* Criar pedidos
+* E muitas outras funções
+
+## Tecnologias
+
+* Django Rest Framework
+
+## Rotas da API
+
+| Rotas | Verbo HTTP | Objetivo|
+| ------- |:-----------:|--------:|
+|/api/users/ | POST | Criação de usuário
+|/api/users/login/ | POST | Autenticação do usuário
+|/api/users/int:user_id/ | GET | Busca de usuário por id
+|/api/users/user_id/ | PATCH | Atualizar usuário
+|/api/movies/ | POST | Criação de filme
+|/api/movies/ | GET | Listagem de filme
+|/api/movies/movie_id/ | GET | Busca de filme por id
+|/api/movies/movie_id/ | DELETE | Deleção de filme
+|/api/movies/movie_id/orders/ | POST | Criação de pedido
 
 ## Instalação dos pacotes de teste
 
